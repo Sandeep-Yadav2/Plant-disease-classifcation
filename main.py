@@ -10,6 +10,7 @@ Original file is located at
 #!pip install streamlit
 import mysql.connector
 import streamlit as st
+import cv2
 #import VGG16
 #import ResNet50
 import tensorflow as tf
@@ -81,13 +82,14 @@ class plant_diseases_detection():
            
         def classify_image(image,model):
             st.write("classifying......")
-            img = ImageOps.grayscale(image)
+            img = cv2.imread(image)
         
             img=img.resize((224,224))
-            img=(img/255.0)
+            
    
       
             img=np.expand_dims(img,0)
+            img=(img/255.0)
           
             
         
