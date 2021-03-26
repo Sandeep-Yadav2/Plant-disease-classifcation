@@ -82,7 +82,7 @@ class plant_diseases_detection():
            
         def classify_image(image,model):
             st.write("classifying......")
-            img = Image(image)
+            img = ImageOps(image)
         
             img=img.resize((224,224))
             
