@@ -10,8 +10,8 @@ Original file is located at
 #!pip install streamlit
 import mysql.connector
 import streamlit as st
-import VGG16
-import ResNet50
+#import VGG16
+#import ResNet50
 import tensorflow as tf
 #import streamlit as st
 import matplotlib.pyplot as plt
@@ -27,7 +27,7 @@ import pickle
 import time
 #@st.cache
 #VGG16=tf.keras.load_model("VGG16")
-ResNet50_model= tf.keras.load_model("ResNet50")
+ResNet50_model= tf.keras.load_model("ResNet50.h5")
 class plant_diseases_detection():
   
   def page_setup():
