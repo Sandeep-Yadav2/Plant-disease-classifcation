@@ -97,7 +97,7 @@ class plant_diseases_detection():
             pred=np.argmax(pred)
         
             st.write("The Predicted image is:",classes(pred))
-            st.write('Prediction probability :{:.2f}%'.format(np.max(pred)*100))
+            st.write('Prediction probability :{:.2f}%'.format(np.max(pred)))
         st.write('Click for classify the image')
         if st.button('Classify Image'):
             if(add_selectbox=='VGG16'):
