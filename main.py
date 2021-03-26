@@ -94,6 +94,7 @@ class plant_diseases_detection():
             
         
             pred=model.predict(img)
+            pred=np.argmax(pred)
         
             st.write("The Predicted image is:",classes(pred))
             st.write('Prediction probability :{:.2f}%'.format(np.max(pred)*100))
