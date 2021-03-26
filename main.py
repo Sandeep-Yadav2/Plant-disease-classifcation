@@ -84,11 +84,12 @@ class plant_diseases_detection():
             img = ImageOps.grayscale(image)
         
             img=img.resize((224,224))
+            img=(img/255.0)
+   
       
             img=np.expand_dims(img,0)
           
-            img=(img/255.0)
-        
+            
         
             pred=model.predict(img)
         
