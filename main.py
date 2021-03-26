@@ -27,7 +27,7 @@ import pickle
 import time
 #@st.cache
 #VGG16=tf.keras.load_model("VGG16")
-ResNet50_model= tf.keras.load_model("ResNet50.h5")
+ResNet50_model= load_model("ResNet50.h5")
 class plant_diseases_detection():
   
   def page_setup():
@@ -90,9 +90,9 @@ class plant_diseases_detection():
             img=(img/255.0)
         
         
-            #pred=model.predict(img)
+            pred=model.predict(img)
         
-            st.write("The Predicted image is:",classes(pred=10))
+            st.write("The Predicted image is:",classes(pred))
             st.write('Prediction probability :{:.2f}%'.format(np.max(pred)*100))
         st.write('Click for classify the image')
         if st.button('Classify Image'):
