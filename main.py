@@ -1,7 +1,7 @@
-#%%writefile app3.py
-#import tensorflow as tf
+
+import tensorflow as tf
 import streamlit as st
-#from keras.models import load_model
+from keras.models import load_model
 import io
 import time
 from googlesearch import search
@@ -239,9 +239,7 @@ class plant_diseases_detection():
 
         
             
-            
-        
-        
+         
     
 
     def pesticide_c(pred):
@@ -297,8 +295,8 @@ class plant_diseases_detection():
             img=np.expand_dims(img,0)
             img=(img/255.0)
 
-            pred=10
-            preds=5
+            preds=model.predict(img)
+            pred=np.argmax(preds)
             return pred,preds
           
             
