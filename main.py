@@ -13,11 +13,11 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 #from tensorflow import keras
 
-#Xception_model=load_model('/content/drive/MyDrive/Capstone_project/Xception.h5')
-#MobileNetV2_model=load_model('/content/drive/MyDrive/Capstone_project/MobileNetV2.h5')
-#InceptionV3_model=load_model('/content/drive/MyDrive/Capstone_project/InceptionV3_28_3.h5')
-import VGG16
-#ResNet50_model= load_model("/content/drive/MyDrive/Capstone_project/ResNet50.h")
+Xception_model=load_model('Xception.h5')
+MobileNetV2_model=load_model('MobileNetV2.h5')
+InceptionV3_model=load_model('InceptionV3.h5')
+VGG16_model=load_model('VGG16.h5')
+ResNet50_model= load_model("ResNet50.h5")
 
 class plant_diseases_detection():
   global pred
@@ -110,17 +110,17 @@ class plant_diseases_detection():
         st.write("Training Accuracy of ResNet50 Model:",(resnet_training_acc),'%')
         st.write("Validation Accuracy of ResNet50 Model:",(resnet_val_acc),'%' )
         if st.button("Epochs Details"):
-          image=Image.open("resnet_top_10.png")
+          image=Image.open("DataImages/resnet_top_10.png")
           st.image(image)
         
         col1,col2=st.beta_columns(2)
         with col1:
           if st.checkbox("Accuracy Graph"):
-            image=Image.open('resnet_acc.png')
+            image=Image.open('DataImages/resnet_acc.png')
             st.image(image)
         with col2:
           if st.checkbox("Loss Graph"):
-            image=Image.open('resnet_loss.png')
+            image=Image.open('DataImages/resnet_loss.png')
             st.image(image)
           
           
@@ -131,17 +131,17 @@ class plant_diseases_detection():
         st.write("Training Accuracy of VGG16 Model:",(vgg_training_acc),'%')
         st.write("Validation Accuracy of VGG16 Model:",(vgg_val_acc),'%' )
         if st.button("Epochs Details"):
-          image=Image.open("vgg16_top_10.png")
+          image=Image.open("DataImages/vgg16_top_10.png")
           st.image(image)
         
         col1,col2=st.beta_columns(2)
         with col1:
           if st.checkbox("Accuracy Graph"):
-            image=Image.open('vgg_acc.png')
+            image=Image.open('DataImages/vgg_acc.png')
             st.image(image)
         with col2:
           if st.checkbox("Loss Graph"):
-            image=Image.open('vgg_loss.png')
+            image=Image.open('DataImages/vgg_loss.png')
             st.image(image)
         
 
@@ -152,19 +152,19 @@ class plant_diseases_detection():
         st.write("Training Accuracy of MobileNetV2 Model:",(mob_training_acc),'%')
         st.write("Validation Accuracy of MobileNetV2 Model:",(mob_val_acc),'%' )
         if st.button("Epochs Details"):
-          image=Image.open("mobilenet_top_10.png")
+          image=Image.open("DataImages/mobilenet_top_10.png")
           st.image(image)
           
         col1,col2=st.beta_columns(2)
         with col1:
           if st.checkbox("Accuracy Graph"):
             st.write(" MobileNetV2 Accuracy Graph:")
-            image=Image.open('mob_acc.png')
+            image=Image.open('DataImages/mob_acc.png')
             st.image(image)
         with col2:
           if st.checkbox("Loss Graph"):
             st.write("MobileNetV2 Loss Graph:")
-            image=Image.open('mob_loss.png')
+            image=Image.open('DataImages/mob_loss.png')
             st.image(image)
         
         
@@ -175,16 +175,16 @@ class plant_diseases_detection():
         st.write("Training Accuracy of Xception Model:",(Xception_training_acc),'%')
         st.write("Validation Accuracy of Xception Model:",(Xception_val_acc),'%' )
         if st.button("Epochs Details"):
-          image=Image.open("xception_top_10.png")
+          image=Image.open("DataImages/xception_top_10.png")
           st.image(image)
         col1,col2=st.beta_columns(2)
         with col1:
           if st.checkbox("Accuracy Graph"):
-            image=Image.open('xception_acc.png')
+            image=Image.open('DataImages/xception_acc.png')
             st.image(image)
         with col2:
           if st.checkbox("Loss Graph"):
-            image=Image.open('xception_loss.png')
+            image=Image.open('DataImages/xception_loss.png')
             st.image(image)
         
         
@@ -196,17 +196,17 @@ class plant_diseases_detection():
         st.write("Training Accuracy of InceptionV3 Model:",(Inception_training_acc),'%')
         st.write("Validation Accuracy of InceptionV3 Model:",(Inception_val_acc),'%')
         if st.button("Epochs Details"):
-          image=Image.open("inceptionv3_top_10.png")
+          image=Image.open("DataImages/inceptionv3_top_10.png")
           st.image(image)
         
         col1,col2=st.beta_columns(2)
         with col1:
           if st.checkbox("Accuracy Graph"):
-            image=Image.open('inception_acc.png')
+            image=Image.open('DataImages/inception_acc.png')
             st.image(image)
         with col2:
           if st.checkbox("Loss Graph"):
-            image=Image.open('inception_loss.png')
+            image=Image.open('DataImages/inception_loss.png')
             st.image(image)
         
 
@@ -217,7 +217,7 @@ class plant_diseases_detection():
       col8,col9,col10=st.beta_columns(3)
       with col8:
         #st.write("Sandeep Yadav")
-        image=Image.open("Sandeep_Yadav.jpg")
+        image=Image.open("DataImages/Sandeep_Yadav.jpg")
         st.image(image,caption="Sandeep Yadav")
     
         #st.markdown("""       ****************  """ "unsafe_allow_html=True")
