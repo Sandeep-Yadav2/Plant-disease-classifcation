@@ -264,7 +264,7 @@ class plant_diseases_detection():
   ############################################# url extraction of predicted diseases             #######################################################
     
     def info_pesticide(pesticide_name):
-      for url in search(pesticide_name,stop=5):
+      for url in search(pesticide_name,num=5):
             st.write(url)
       
     
