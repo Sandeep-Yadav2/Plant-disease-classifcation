@@ -12,12 +12,12 @@ import requests
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 #from tensorflow import keras
-
+@st.cache
 Xception_model=load_model('Xception.h5')
 MobileNetV2_model=load_model('MobileNetV2.h5')
-InceptionV3_model=load_model('InceptionV3.h5')
-VGG16_model=load_model('VGG16.h5')
-ResNet50_model= load_model("ResNet50.h5")
+#InceptionV3_model=load_model('InceptionV3.h5')
+#VGG16_model=load_model('VGG16.h5')
+#ResNet50_model= load_model("ResNet50.h5")
 @st.cache
 class plant_diseases_detection():
   global pred
@@ -307,7 +307,7 @@ class plant_diseases_detection():
           if st.checkbox('Classify Image'):
             if(add_selectbox=='VGG16'):
               st.write("You are choosen Image classification with VGG16 model")
-              pred,preds=classify_image(image,VGG16)
+              pred,preds=classify_image(image,Xception_model)
               st.subheader("The Predicted Image is:")
               st.success(classes(pred))
               #st.write('Prediction probability :{:.2f}%'.format((np.max(preds)*100))
@@ -327,8 +327,8 @@ class plant_diseases_detection():
                 st.info(pesticide_c(pred))
                 st.balloons()
             if(add_selectbox=='ResNet50'):
-                st.write("You are choosen Image classification with MobileNetV2")
-                pred,preds=classify_image(image,ResNet50_model)
+                st.write("You are choosen Image classification with ResNet50")
+                pred,preds=classify_image(image,Xception_model)
                 st.subheader("The Predicted Image is:")
                 st.success(classes(pred))
                 #st.write('Prediction probability :{:.2f}%'.format((np.max(preds)*100))
@@ -336,7 +336,7 @@ class plant_diseases_detection():
                 st.info(pesticide_c(pred))
                 st.balloons()
             if(add_selectbox=='Xception'):
-                st.write("You are choosen Image classification with MobileNetV2")
+                st.write("You are choosen Image classification with Xception")
                 pred,preds=classify_image(image,Xception_model)
                 st.subheader("The Predicted Image is:")
                 st.success(classes(pred))
@@ -346,8 +346,8 @@ class plant_diseases_detection():
                 st.balloons()
 
             if(add_selectbox=='InceptionV3'):
-                st.write("You are choosen Image classification with MobileNetV2")
-                pred,preds=classify_image(image,InceptionV3_model)
+                st.write("You are choosen Image classification with InceptionV3")
+                pred,preds=classify_image(image,Xception_model)
                 st.subheader("The Predicted Image is:")
                 st.success(classes(pred))
                 #st.write('Prediction probability :{:.2f}%'.format((np.max(preds)*100))
