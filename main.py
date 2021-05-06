@@ -220,28 +220,17 @@ class plant_diseases_detection():
         image=Image.open("DataImages/Sandeep_Yadav.jpg")
         st.image(image,caption="Sandeep Yadav")
     
-        #st.markdown("""       ****************  """ "unsafe_allow_html=True")
+        st.markdown(""" <h1> wellcome """ "unsafe_allow_html=True")
       with col9:
         st.write("Abhishek")
-        st.info("Image not available")
+        st.image(image,caption="Abhishek")
 
 
       with col10:
         st.write("Om Prakash")
-        st.info("image not available")
+        st.image(image,caption="OmPrakash)
         
       
-
-
-
-
-
-
-        
-            
-         
-    
-
     def pesticide_c(pred):
       
       pest_classes={0:'Azoxystrobin + Difenoconazole', 1:'Copper Oxychloride+45/ kasugamy in 5/', 2:'Copper Oxychloride+45/ kasugamy in 5/', 3:'No Need of Pesticide Apple is healthy', 
